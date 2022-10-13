@@ -1,0 +1,14 @@
+<html>
+<body>
+    <h1> us  us  us </h1>
+    <p>Lets test more emoji replacement 😀 🇺🇸 us .</p>
+</body>
+<script>
+const flagemojiToPNG = (flag) => {
+    var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt()).map(char => String.fromCharCode(char-127397).toLowerCase()).join('')
+    return "<img src='https://flagcdn.com/24x18/py.png'>"
+}
+    var reg = new RegExp('(?:\ud83c[\udde6-\uddff]){2}', 'g');
+    document.body.innerHTML = document.body.innerHTML.replaceAll(reg, flagemojiToPNG);
+</script>
+    </html>
